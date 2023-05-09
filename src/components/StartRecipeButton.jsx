@@ -14,8 +14,8 @@ function StartRecipeButton({ recipeRequestApi }) {
 
   if (localStorage.getItem('doneRecipes')) {
     if (JSON.parse(localStorage.getItem('doneRecipes'))
-      .find({}.id === recipeRequestApi.idDrink
-        || recipeRequestApi.idMeal)) {
+      .find((element) => element.id === recipeRequestApi.idDrink
+        || element.id === recipeRequestApi.idMeal)) {
       return;
     }
     return (
